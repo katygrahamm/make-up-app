@@ -45,7 +45,7 @@ class Filters extends Component {
 
   onFormSubmit(event) {
 
-    event.preventDefault();
+   // event.preventDefault();
     
     // fetch make-up data
     this.state.productTypeClicked = event.target.id;
@@ -80,12 +80,8 @@ class Filters extends Component {
     return (
       <div class="row ">
         <div id="side-bar" class="col-2">
-          <form class="m-3" onChange={this.onFormSubmit}>
+          <form class="m-3" onClick={this.onFormSubmit}>
             {this.state.productTypes.map(this.renderACheckbox)}   
-            <div class="col m-2">
-            <button type="submit" class="btn badge badge-pill btn-outline-danger" >Submit</button>
-            </div>
-
           </form>
 ​        </div>
       </div>
