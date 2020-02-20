@@ -1,19 +1,15 @@
-td,
-th {
-  vertical-align: middle !important;
-  text-align: center !important;
+#side-bar {
+  padding-top: 140px;
+  height: 50%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
-.input-group {
-  margin: 20px 0px;
-}
-
-svg {
-  height: 150px;
-}
-
-td:first-of-type,
-td:first-of-type > div {
-  height: 200px;
-  width: 250px;
+#header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
 }
