@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchMakeUp} from '../actions/index';
 
 class Filters extends Component {
+
     constructor(props) {
         super(props);
 
@@ -110,6 +111,7 @@ class Filters extends Component {
             </div>
         );
     }
+
 }
 
 function mapDispatchToProps(dispatch) {
