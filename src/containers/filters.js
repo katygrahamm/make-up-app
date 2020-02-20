@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchMakeUp} from '../actions/index';
+import {fetchMakeUp, resetMakeUp} from '../actions/index';
 
 class Filters extends Component {
   
@@ -56,6 +56,8 @@ class Filters extends Component {
     }
 
     componentDidUpdate(){
+      //resets the state before everything re renders
+      this.props.resetMakeUp()
       //first loop, loops through tags array
       for (let i = 0; i < this.state.tags.length; i++) {
         //second loop, loops through productTypesChecked array
@@ -120,7 +122,8 @@ class Filters extends Component {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        fetchMakeUp
+        fetchMakeUp,
+        resetMakeUp
     }, dispatch);
 }
 
