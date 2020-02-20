@@ -6,8 +6,10 @@ import Filters from '../containers/filters';
 export default class App extends Component {
   render() {
     return (
-      <div className="row">
+      <div className="row d-flex" >
+        <div>
         <Filters />
+        </div>
         <MakeUpList />
       </div>
     );
