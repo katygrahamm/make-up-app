@@ -5,31 +5,29 @@ import { connect } from 'react-redux';
 class MakeUpList extends Component {
  renderMakeUp (makeUpData) {
      return (
-       <div className="justify-content-left">
+        <div>
               {
                 makeUpData.map(m => (
                   <div className="makeUp-item" key={m.id}>
-                    <div className="col-md-4">
-                    <img src={m.image_link} alt=""></img>
+                    <img src={m.image_link} alt="" width="150" height="auto"></img>
                     <p className="item-name">{m.name}</p>
                     <p className="item-brand">{m.brand}</p>
                     <p className="price">${m.price}</p>
                     <button type="button" className="btn btn-info btn-sm">Buy it Now</button>
                   </div>
-                </div>
                 ))
               }
-            </div>
+          </div>
         )
       }
 
 render() {
     return (
-      <div className="col-9  justify-content-left">
-         <div className=" row">
-           <div className="col">
+      <div class="row">
+       <div class="col-md-4">
+         <div class="card-container">
           {this.props.makeUp.map(this.renderMakeUp)}
-           </div>
+          </div>
         </div>
       </div>
     );
