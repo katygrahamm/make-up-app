@@ -31,7 +31,7 @@ class Filters extends Component {
     ],
 
       tags:
-      ['gluten+free', 'cruelty+free'],
+      ['gluten+free', 'natural'],
 
       productTypeClicked:''}
 
@@ -39,29 +39,17 @@ class Filters extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  onInputChange(e) {
-    console.log('i click')
-  }
-
   onFormSubmit(event) {
 
-    event.preventDefault();
+  
     
     // fetch make-up data
-    this.state.productTypeClicked = event.target.id;
+    //looped through tags and fetch one for each tag
     for (let i = 0; i < this.state.tags.length; i++){
-      this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked)
+      console.log('tag', this.state.tags[i])
+      this.props.fetchMakeUp(this.state.tags[i], event.target.id)
     }
     
-
-    // event.taget.id will result of calling product_type from this.state  example "mascara"
-    console.log('event inside onFormSubmit ', event.target.id)  
-    
-
-    
-  
-    console.log('data ', this.state)
-    //event.preventDefault();
 
   }
   //need to make the onchange the the oninputchangefunction
@@ -82,15 +70,9 @@ class Filters extends Component {
         <div id="side-bar" class="col-2">
           <form class="m-3" onChange={this.onFormSubmit}>
             {this.state.productTypes.map(this.renderACheckbox)}   
-            <div class="col m-2">
-            <button type="submit" class="btn badge badge-pill btn-outline-danger" >Submit</button>
-            </div>
-
           </form>
 ​        </div>
       </div>
-
-
     );
   }
 }
