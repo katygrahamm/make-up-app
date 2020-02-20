@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchMakeUp} from '../actions/index';
 
 class Filters extends Component {
-
+  
     constructor(props) {
         super(props);
 
@@ -55,6 +55,17 @@ class Filters extends Component {
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
+    componentDidUpdate(){
+      //first loop, loops through tags array
+      for (let i = 0; i < this.state.tags.length; i++) {
+        //second loop, loops through productTypesChecked array
+        for (let j = 0; j < this.state.productTypeClicked.length; j++){ 
+            //this calls the fetch makeup function, parameters pass the tag and product
+            this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked[j])
+        }
+    }
+    };
+
     onFormSubmit(event) {
         //condition statement to check if the button is being clicked or unclicked and also to set the area of products
         //if button is being unchecked
@@ -74,14 +85,7 @@ class Filters extends Component {
                 productTypeClicked: this.state.productTypeClicked.concat([event.target.id])
             })
         }
-        //first loop, loops through tags array
-        for (let i = 0; i < this.state.tags.length; i++) {
-            //second loop, loops through productTypesChecked array
-            for (let j = 0; j < this.state.productTypeClicked.length; j++){ 
-                //this calls the fetch makeup function, parameters pass the tag and product
-                this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked[j])
-            }
-        }
+      console.log('productarray', this.state.productTypeClicked)
       }
     //renders each individual checkbox and label
     renderACheckbox(productType) {
