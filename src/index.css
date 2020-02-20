@@ -6,11 +6,6 @@
   top: 0;
 }
 
-#main-view {
-  display: inline-block;
-  float: right;
-}
-
 #header {
   position: -webkit-sticky;
   position: sticky;
