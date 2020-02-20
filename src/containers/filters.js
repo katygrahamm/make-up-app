@@ -8,25 +8,25 @@ class Filters extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {productTypes: [ 
+    this.state = {productTypes: [
       {name : 'Lipstick' , isChecked: null, product_type: "lipstick"},
 
       {name:'Eyeliner', isChecked: null, product_type: "eyeliner" },
-    
+
       {name:'Eyeshadow', isChecked: null, product_type: "eyeshadow" },
-    
+
       {name: 'Mascara', isChecked: null, product_type: "mascara"},
-    
+
       {name: 'Foundation', isChecked: null, product_type: "foundation" },
 
       {name: 'Blush', isChecked: null, product_type: "blush" },
-    
+
       {name: 'Bronzer', isChecked: null, product_type: "bronzer" },
-   
+
       {name: 'Eyebrow', isChecked: null, product_type: "eyebrow" },
-    
+
       {name: 'Lip Liner', isChecked: null, product_type: "lip_liner"},
-    
+
       {name: 'Nail Polish', isChecked: null, product_type : "nail_polish"},
     ],
 
@@ -46,20 +46,20 @@ class Filters extends Component {
   onFormSubmit(event) {
 
     event.preventDefault();
-    
+
     // fetch make-up data
     for (let i = 0; i < this.state.tags.length; i++){
       this.props.fetchMakeUp(this.state.tags[i])
     }
-    
+
 
     // event.taget.id will result of calling product_type from this.state  example "mascara"
-    console.log('event inside onFormSubmit ', event.target.id)  
-    
+    console.log('event inside onFormSubmit ', event.target.id)
+
 
     // fetch make-up data
     this.state.productTypeClicked = event.target.id;
-    
+
     this.props.fetchMakeUp(this.state.productTypeClicked);
     console.log('data ', this.state)
     //event.preventDefault();
@@ -82,16 +82,13 @@ class Filters extends Component {
       <div class="row ">
         <div id="side-bar" class="col-2">
           <form class="m-3" onChange={this.onFormSubmit}>
-            {this.state.productTypes.map(this.renderACheckbox)}   
+            {this.state.productTypes.map(this.renderACheckbox)}
             <div class="col m-2">
             <button type="submit" class="btn badge badge-pill btn-outline-danger" >Submit</button>
             </div>
-
           </form>
 ​        </div>
       </div>
-
-
     );
   }
 }
