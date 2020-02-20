@@ -7,7 +7,7 @@ const product = 'foundation'
 export const FETCH_MAKEUP = 'FETCH_MAKEUP';
 
 export function fetchMakeUp(tags) {
-    const url = `${ROOT_URL}product_tags=${tags}&product_type=${product}`;
+    const url = `${ROOT_URL}product_tags='vegan'&product_type=${tags}`;
     const request = axios.get(url);
   return {
     type: FETCH_MAKEUP,
