@@ -38,6 +38,7 @@ render() {
 }
 
 function mapStateToProps({ makeUp }) {
+  console.log('makeup', {makeUp})
   return { makeUp };
 }
 
