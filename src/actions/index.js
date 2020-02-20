@@ -16,4 +16,3 @@ export function fetchMakeUp(tags, products) {
   };
 
 }
-
