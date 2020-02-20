@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 class MakeUpList extends Component {
  renderMakeUp (makeUpData) {
+   console.log(makeUpData)
      return (
         <div>
               {

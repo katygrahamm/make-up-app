@@ -8,25 +8,25 @@ class Filters extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {productTypes: [ 
+    this.state = {productTypes: [
       {name : 'Lipstick' , isChecked: null, product_type: "lipstick"},
 
       {name:'Eyeliner', isChecked: null, product_type: "eyeliner" },
-    
+
       {name:'Eyeshadow', isChecked: null, product_type: "eyeshadow" },
-    
+
       {name: 'Mascara', isChecked: null, product_type: "mascara"},
-    
+
       {name: 'Foundation', isChecked: null, product_type: "foundation" },
 
       {name: 'Blush', isChecked: null, product_type: "blush" },
-    
+
       {name: 'Bronzer', isChecked: null, product_type: "bronzer" },
-   
+
       {name: 'Eyebrow', isChecked: null, product_type: "eyebrow" },
-    
+
       {name: 'Lip Liner', isChecked: null, product_type: "lip_liner"},
-    
+
       {name: 'Nail Polish', isChecked: null, product_type : "nail_polish"},
     ],
 
@@ -41,15 +41,12 @@ class Filters extends Component {
 
   onFormSubmit(event) {
 
-  
-    
     // fetch make-up data
     //looped through tags and fetch one for each tag
     for (let i = 0; i < this.state.tags.length; i++){
       console.log('tag', this.state.tags[i])
       this.props.fetchMakeUp(this.state.tags[i], event.target.id)
     }
-    
 
   }
   //need to make the onchange the the oninputchangefunction
@@ -69,7 +66,9 @@ class Filters extends Component {
       <div class="row ">
         <div id="side-bar" class="col-2">
           <form class="m-3" onChange={this.onFormSubmit}>
+
             {this.state.productTypes.map(this.renderACheckbox)}   
+
           </form>
 ​        </div>
       </div>
