@@ -33,7 +33,7 @@ class Filters extends Component {
       tags:
       ['gluten+free', 'cruelty+free'],
 
-      productTypeClicked:[]}
+      productTypeClicked:''}
 
     //this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -48,19 +48,15 @@ class Filters extends Component {
     event.preventDefault();
 
     // fetch make-up data
+    this.state.productTypeClicked = event.target.id;
     for (let i = 0; i < this.state.tags.length; i++){
-      this.props.fetchMakeUp(this.state.tags[i])
+      this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked)
     }
 
 
     // event.taget.id will result of calling product_type from this.state  example "mascara"
     console.log('event inside onFormSubmit ', event.target.id)
 
-
-    // fetch make-up data
-    this.state.productTypeClicked = event.target.id;
-
-    this.props.fetchMakeUp(this.state.productTypeClicked);
     console.log('data ', this.state)
     //event.preventDefault();
 
