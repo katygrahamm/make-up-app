@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchMakeUp, resetMakeUp} from '../actions/index';
 
 class Filters extends Component {
-  
+
     constructor(props) {
         super(props);
 
@@ -61,7 +61,7 @@ class Filters extends Component {
       //first loop, loops through tags array
       for (let i = 0; i < this.state.tags.length; i++) {
         //second loop, loops through productTypesChecked array
-        for (let j = 0; j < this.state.productTypeClicked.length; j++){ 
+        for (let j = 0; j < this.state.productTypeClicked.length; j++){
             //this calls the fetch makeup function, parameters pass the tag and product
             this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked[j])
         }
@@ -92,7 +92,7 @@ class Filters extends Component {
     //renders each individual checkbox and label
     renderACheckbox(productType) {
         return (
-            <div className="side-bar">
+            <div className="side-bar" key={productType.id}>
                 <div class="col m-2">
                     <input
                         type="checkbox"
