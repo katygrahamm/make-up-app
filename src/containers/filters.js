@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index.js';
 
-class SearchBar extends Component {
+class Filters extends Component {
   constructor(props) {
     super(props);
 
@@ -52,4 +52,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   null,
   mapDispatchToProps
-)(SearchBar);
+)(Filters);
