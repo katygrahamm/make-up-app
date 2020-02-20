@@ -11,51 +11,42 @@ class Filters extends Component {
             productTypes: [
                 {
                     name: 'Lipstick',
-                    isChecked: null,
                     product_type: "lipstick"
                 }, {
                     name: 'Eyeliner',
-                    isChecked: null,
                     product_type: "eyeliner"
                 }, {
                     name: 'Eyeshadow',
-                    isChecked: null,
                     product_type: "eyeshadow"
                 }, {
                     name: 'Mascara',
-                    isChecked: null,
                     product_type: "mascara"
                 }, {
                     name: 'Foundation',
-                    isChecked: null,
                     product_type: "foundation"
                 }, {
                     name: 'Blush',
-                    isChecked: null,
                     product_type: "blush"
                 }, {
                     name: 'Bronzer',
-                    isChecked: null,
+
                     product_type: "bronzer"
                 }, {
                     name: 'Eyebrow',
-                    isChecked: null,
                     product_type: "eyebrow"
                 }, {
                     name: 'Lip Liner',
-                    isChecked: null,
                     product_type: "lip_liner"
                 }, {
                     name: 'Nail Polish',
-                    isChecked: null,
                     product_type: "nail_polish"
                 }
             ],
-
+            //hold all the tags we are interested in providing
             tags: [
                 'gluten+free', 'natural'
             ],
-
+            //holds all the products the user is interested in seeing
             productTypeClicked: []
         }
 
@@ -64,28 +55,34 @@ class Filters extends Component {
     }
 
     onFormSubmit(event) {
+        //condition statement to check if the button is being clicked or unclicked and also to set the area of products
+        //if button is being unchecked
         if (!event.target.checked) {
             console.log('event clicked', event.target.checked)
+            //removes the id of the clicked item to the end of the productTypeClicked array
             const newState = this.state.productTypeClicked.filter(function (p) {
                     return p !== event.target.id
                 })
+            //new state is up to date. Why isnt the state????
             console.log('newstate', newState)
             this.setState({productTypeClicked: newState})
-
+        //if button is being checked
         } else {
-            // fetch make-up data
+            //adds the id of the clicked item to the end of the productTypeClicked array
             this.setState({
                 productTypeClicked: this.state.productTypeClicked.concat([event.target.id])
             })
-            //looped through tags and fetch one for each tag
-
         }
+        //first loop, loops through tags array
         for (let i = 0; i < this.state.tags.length; i++) {
-            for (let j = 0; j < this.state.productTypeClicked.length; j++) 
+            //second loop, loops through productTypesChecked array
+            for (let j = 0; j < this.state.productTypeClicked.length; j++){ 
+                //this calls the fetch makeup function, parameters pass the tag and product
                 this.props.fetchMakeUp(this.state.tags[i], this.state.productTypeClicked[j])
+            }
         }
-    }
-    //need to make the onchange the the oninputchangefunction
+      }
+    //renders each individual checkbox and label
     renderACheckbox(productType) {
         return (
             <div className="side-bar">
@@ -100,16 +97,13 @@ class Filters extends Component {
             </div>
         )
     }
-
+    //renders list of checkboxes and labels
     render() {
         return (
             <div class="row ">
                 <div id="side-bar" class="col-2">
                     <form class="m-3" onChange={this.onFormSubmit}>
-                        {this
-                            .state
-                            .productTypes
-                            .map(this.renderACheckbox)}
+                        {this.state.productTypes.map(this.renderACheckbox)}
                     </form>
                     ​
                 </div>
