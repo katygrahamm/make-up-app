@@ -29,9 +29,10 @@ class Filters extends Component {
     
       {name: 'Nail Polish', isChecked: true},
     ],
-      tags:'gluten+free',
+      tags:
+      ['gluten+free', 'cruelty+free'],
 
-      productTypeClicked:''}
+      productTypeClicked:[]}
 
     //this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -43,10 +44,12 @@ class Filters extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-
+    
     // fetch make-up data
-    console.log(this)
-    this.props.fetchMakeUp(this.state.tags);
+    for (let i = 0; i < this.state.tags.length; i++){
+      this.props.fetchMakeUp(this.state.tags[i])
+    }
+    
   }
   //need to make the onchange the the oninputchangefunction
   renderACheckbox(productType){
@@ -71,35 +74,9 @@ class Filters extends Component {
           </form>
 ​        </div>
       </div>
-
-      
     );
   }
 }
-
-
-
-
-
-/*  render() {
-    return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          placeholder="search product type"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
-            Submit
-          </button>
-        </span>
-      </form>
-    );
-  }
-}
-*/
 
 
 function mapDispatchToProps(dispatch) {
