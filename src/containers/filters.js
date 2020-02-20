@@ -59,9 +59,11 @@ class Filters extends Component {
   //need to make the onchange the the oninputchangefunction
   renderACheckbox(productType){
     return (
+      <div className="side-bar">
       <div class="col m-2">
           <input type="checkbox" class="form-check-input" onChange={console.log('hi')} id={productType.product_type} checked={productType.isChecked}></input>
           <label className="form-check-label" for="exampleCheck1">{productType.name}</label>
+      </div>
       </div>
       )
   }
@@ -80,7 +82,7 @@ class Filters extends Component {
 ​        </div>
       </div>
 
-      
+
     );
   }
 }
