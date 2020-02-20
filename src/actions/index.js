@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const ROOT_URL = 'http://makeup-api.herokuapp.com/api/v1/products.json?'
-const product = 'lipstick'
+const product = 'foundation'
 
 export const FETCH_MAKEUP = 'FETCH_MAKEUP';
 
