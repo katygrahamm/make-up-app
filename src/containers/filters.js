@@ -9,29 +9,32 @@ class Filters extends Component {
     super(props);
 
     this.state = {productTypes: [ 
-      {name : 'Lipstick' , isChecked: true},
+      {name : 'Lipstick' , isChecked: null, product_type: "lipstick"},
 
-      {name:'Eyeliner', isChecked: true},
+      {name:'Eyeliner', isChecked: null, product_type: "eyeliner" },
     
-      {name:'Eyeshadow', isChecked: true},
+      {name:'Eyeshadow', isChecked: null, product_type: "eyeshadow" },
     
-      {name: 'Mascara', isChecked: true},
+      {name: 'Mascara', isChecked: null, product_type: "mascara"},
     
-      {name: 'Foundation', isChecked: true},
+      {name: 'Foundation', isChecked: null, product_type: "foundation" },
 
-      {name: 'Blush', isChecked: true},
+      {name: 'Blush', isChecked: null, product_type: "blush" },
     
-      {name: 'Bronzer', isChecked: true},
+      {name: 'Bronzer', isChecked: null, product_type: "bronzer" },
    
-      {name: 'Eyebrow', isChecked: true},
+      {name: 'Eyebrow', isChecked: null, product_type: "eyebrow" },
     
-      {name: 'Lip Liner', isChecked: true},
+      {name: 'Lip Liner', isChecked: null, product_type: "lip_liner"},
     
-      {name: 'Nail Polish', isChecked: true},
+      {name: 'Nail Polish', isChecked: null, product_type : "nail_polish"},
     ],
-      tags:'gluten+free',
+      tags: '',
 
-      productTypeClicked:''}
+       }
+
+
+      // 
 
     //this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -42,17 +45,22 @@ class Filters extends Component {
   }
 
   onFormSubmit(event) {
-    event.preventDefault();
+    // event.taget.id will result of calling product_type from this.state  example "mascara"
+    console.log('event inside onFormSubmit ',event.target.id)  
+    
 
     // fetch make-up data
-    console.log(this)
+    this.state.tags = event.target.id;
+    
     this.props.fetchMakeUp(this.state.tags);
+    console.log('data ', this.state)
+    //event.preventDefault();
   }
   //need to make the onchange the the oninputchangefunction
   renderACheckbox(productType){
     return (
       <div class="col m-2">
-          <input type="checkbox" class="form-check-input" onChange={console.log('hi')} id={productType.name} checked={productType.isChecked}></input>
+          <input type="checkbox" class="form-check-input" onChange={console.log('hi')} id={productType.product_type} checked={productType.isChecked}></input>
           <label className="form-check-label" for="exampleCheck1">{productType.name}</label>
       </div>
       )
@@ -61,11 +69,11 @@ class Filters extends Component {
   render() {
     return (
       <div class="row ">
-        <div id="side-bar" class="col-2 bg-light">
-          <form class="m-3" onSubmit={this.onFormSubmit}>
+        <div id="side-bar" class="col-2">
+          <form class="m-3" onChange={this.onFormSubmit}>
             {this.state.productTypes.map(this.renderACheckbox)}   
             <div class="col m-2">
-            <button type="submit" class="btn badge badge-pill btn-outline-danger">Submit</button>
+            <button type="submit" class="btn badge badge-pill btn-outline-danger" >Submit</button>
             </div>
 
           </form>
