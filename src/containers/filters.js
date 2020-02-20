@@ -29,12 +29,11 @@ class Filters extends Component {
     
       {name: 'Nail Polish', isChecked: null, product_type : "nail_polish"},
     ],
-      tags: '',
 
-       }
+      tags:
+      ['gluten+free', 'cruelty+free'],
 
-
-      // 
+      productTypeClicked:[]}
 
     //this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -45,16 +44,26 @@ class Filters extends Component {
   }
 
   onFormSubmit(event) {
+
+    event.preventDefault();
+    
+    // fetch make-up data
+    for (let i = 0; i < this.state.tags.length; i++){
+      this.props.fetchMakeUp(this.state.tags[i])
+    }
+    
+
     // event.taget.id will result of calling product_type from this.state  example "mascara"
-    console.log('event inside onFormSubmit ',event.target.id)  
+    console.log('event inside onFormSubmit ', event.target.id)  
     
 
     // fetch make-up data
-    this.state.tags = event.target.id;
+    this.state.productTypeClicked = event.target.id;
     
-    this.props.fetchMakeUp(this.state.tags);
+    this.props.fetchMakeUp(this.state.productTypeClicked);
     console.log('data ', this.state)
     //event.preventDefault();
+
   }
   //need to make the onchange the the oninputchangefunction
   renderACheckbox(productType){
@@ -89,27 +98,6 @@ class Filters extends Component {
 
 
 
-
-
-/*  render() {
-    return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          placeholder="search product type"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
-            Submit
-          </button>
-        </span>
-      </form>
-    );
-  }
-}
-*/
 
 
 function mapDispatchToProps(dispatch) {
