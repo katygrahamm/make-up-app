@@ -4,15 +4,11 @@
   margin-left: 30px;
   position: fixed;
   display: absolute;
-  border-style: solid;
-  border-width: 5px;
   width: 160px;
   height: 350px;
-  margin-top: 150px;
   padding-top: 20px;
   padding-bottom: 380px;
   border-color: #FF69B4;
-  text-shadow:2px 2px 4px #383737;
 }
 
 #header {
@@ -27,7 +23,7 @@
 }
 
 #main-view {
-  padding-top: 10px;
+  padding-top: 20px;
   height: 50%;
   /* position: -webkit-sticky;
   position: sticky; */
@@ -59,4 +55,8 @@ h1 {
 
 .price {
    visibility: visible;
+}
+
+h3 {
+  padding-bottom: 20px;
 }
