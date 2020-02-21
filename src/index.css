@@ -4,16 +4,11 @@
   margin-left: 30px;
   position: fixed;
   display: absolute;
-  border-style: solid;
-  border-width: 5px;
   width: 160px;
   height: 350px;
-  margin-top: 150px;
   padding-top: 20px;
   padding-bottom: 380px;
-  border-color:black;
-  border-left: none;
-  
+  border-color: #FF69B4;
 }
 
 #header {
@@ -60,4 +55,13 @@ h1 {
 
 .price {
    visibility: visible;
+}
+
+h3 {
+  padding-bottom: 20px;
+}
+
+#influencer-view {
+  margin-right: 20px;
+  padding-top: 100px;
 }

@@ -7,16 +7,16 @@ class NaturalMakeUpList extends Component {
  renderNaturalMakeUp (makeUpData) {
    let newMakeUpData = Object.values(makeUpData);
 
-   let natural = makeUpData.filter(m => m.tag_list.includes("Natural") && !m.tag_list.includes("Vegan"))
+   let natural = makeUpData.filter(m => m.tag_list.includes("Natural")&& !m.tag_list.includes("Vegan"))
  console.log("natural", natural)
      return (
 
-                natural.map(m => (
+                natural.map(m => ( 
                     <div className="col-3 makeup-item text-center" key={m.id}>
                       <img src={m.image_link} alt="" width="140" height="auto" className="rounded mx-auto d-block"></img>
                       <div className="item-name">{m.name}</div>
                       <div className="item-brand">{m.brand}</div>
-                      <div className="price">${m.price}</div>
+                      <div className="price">${parseFloat(m.price).toFixed(2)}</div>
                       <button type="button" class="btn btn-outline-info"><a href={m.product_link} className="text-info">Buy it Now</a></button>
                       </div>
 
