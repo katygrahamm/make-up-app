@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchMakeUp, resetMakeUp} from '../actions/index';
+import '../index.css';
 
 class Filters extends Component {
 

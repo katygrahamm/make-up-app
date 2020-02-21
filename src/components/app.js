@@ -3,6 +3,7 @@ import { Component } from 'react';
 import NaturalMakeUpList from '../containers/naturalList';
 import VeganMakeUpList from '../containers/veganList';
 import Filters from '../containers/filters';
+import '../index.css';
 
 
 export default class App extends Component {
