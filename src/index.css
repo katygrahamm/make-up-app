@@ -17,9 +17,9 @@
   top: 0;
   background-color: white;
   z-index: 1;
-  color: #FF69B4;
+  color: black;
   font-weight: 800;
-  text-shadow: 2px 2px 4px #000000;
+  
 }
 
 #main-view {

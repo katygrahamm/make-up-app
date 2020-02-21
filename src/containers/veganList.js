@@ -15,7 +15,7 @@ class VeganMakeUpList extends Component {
                       <img src={m.image_link} alt="" width="140" height="auto" className="rounded mx-auto d-block"></img>
                       <div className="item-name">{m.name}</div>
                       <div className="item-brand">{m.brand}</div>
-                      <div className="price">${m.price}</div>
+                      <div className="price">${parseFloat(m.price).toFixed(2)}</div>
                       <button type="button" class="btn btn-outline-info"><a href={m.product_link} className="text-info">Buy it Now</a></button>
                       </div>
 
