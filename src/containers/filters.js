@@ -46,7 +46,7 @@ class Filters extends Component {
             ],
             //hold all the tags we are interested in providing
             tags: [
-                'nautral', 'vegan', 'organic'
+                'natural', 'vegan'
             ],
             //holds all the products the user is interested in seeing
             productTypeClicked: []
@@ -111,7 +111,6 @@ class Filters extends Component {
             <div class="row" id="sidebar-border">
                 <div id="side-bar" class="col-2">
                     <form class="m-3" onChange={this.onFormSubmit}>
-                    <br></br>
                       <h3 className="text-center">Product Types</h3>
                         {this.state.productTypes.map(this.renderACheckbox)}
                     </form>
