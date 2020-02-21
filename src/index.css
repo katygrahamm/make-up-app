@@ -19,7 +19,7 @@
   z-index: 1;
   color: black;
   font-weight: 800;
-  
+
 }
 
 #main-view {
@@ -70,9 +70,17 @@ h3 {
   padding-top: 50px;
   padding-right: 20px;
   margin-left: 60px;
-    
+
 }
 
 #natural {
   margin-right: -150px;
+}
+
+.bottom {
+  margin-top: 12px;
+}
+
+.banner {
+  margin-top: 20px;
 }
