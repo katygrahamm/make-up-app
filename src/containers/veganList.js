@@ -29,8 +29,8 @@ class VeganMakeUpList extends Component {
 render() {
     return (
       <div id="second-main-view" className="container">
-      <h1 className="text-left">Vegan Products</h1>
-        <hr></hr>
+      <h1 id="vegan" className="text-left">Vegan Products</h1>
+      <hr></hr>
         <div className="row d-flex ">
 
 

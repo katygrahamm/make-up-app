@@ -30,7 +30,7 @@ class NaturalMakeUpList extends Component {
 render() {
     return (
       <div id="main-view" className="container">
-      <h1 className="text-left">Natural Products</h1>
+      <h1 id="natural" className="text-left">Natural Products</h1>
         <hr></hr>
         <div className="row d-flex ">
 

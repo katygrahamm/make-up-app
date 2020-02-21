@@ -18,8 +18,8 @@ export default class App extends Component {
         <NaturalMakeUpList />
         <GlutenFreeMakeUpList />
         </div>
-        <div id="influencer-view">
-        <h3 className="text-center">Follow Our Favorite Influencers</h3>
+        <div id="influencer-view" >
+        <h3 className="text-center" >Follow our Faves</h3>
         <InstagramEmbed
             url='https://www.instagram.com/p/B8ttLJODUYt/?utm_source=ig_web_copy_link'
             maxWidth={320}
