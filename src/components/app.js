@@ -13,7 +13,7 @@ export default class App extends Component {
         <div>
         <Filters />
         </div>
-      <div id="main-view" className="container">
+        <div id="main-view" className="container">
         <NaturalMakeUpList />
         <VeganMakeUpList />
         </div>

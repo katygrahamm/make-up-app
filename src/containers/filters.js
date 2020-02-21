@@ -111,6 +111,8 @@ class Filters extends Component {
             <div class="row" id="sidebar-border">
                 <div id="side-bar" class="col-2">
                     <form class="m-3" onChange={this.onFormSubmit}>
+                    <br></br>
+                      <h3 className="text-center">Product Types</h3>
                         {this.state.productTypes.map(this.renderACheckbox)}
                     </form>
                     ​
