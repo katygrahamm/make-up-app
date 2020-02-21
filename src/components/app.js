@@ -1,7 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
-import MakeUpList from '../containers/makeup-list';
+import NaturalMakeUpList from '../containers/naturalList';
+import VeganMakeUpList from '../containers/veganList';
 import Filters from '../containers/filters';
+
 
 export default class App extends Component {
   render() {
@@ -10,7 +12,10 @@ export default class App extends Component {
         <div>
         <Filters />
         </div>
-        <MakeUpList />
+      <div id="main-view" className="container">
+        <NaturalMakeUpList />
+        <VeganMakeUpList />
+        </div>
       </div>
     );
   }

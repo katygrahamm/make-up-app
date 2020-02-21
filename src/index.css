@@ -1,9 +1,10 @@
 #side-bar {
-  padding-top: 140px;
+  padding-top: 30px;
   height: 50%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  margin-left: 30px;
 }
 
 #header {
@@ -12,4 +13,39 @@
   top: 0;
   background-color: white;
   z-index: 1;
+}
+
+#main-view {
+  padding-top: 10px;
+  height: 50%;
+  /* position: -webkit-sticky;
+  position: sticky; */
+  top: 0;
+}
+
+#second-main-view {
+  padding-top: 50px;
+  height: 50%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin-right: 20px;
+}
+
+
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.lobster {
+  font-family: 'Lobster'
+}
+
+.krona-one {
+  font-family: 'Krona-One';
+}
+
+.price {
+   visibility: visible;
 }
