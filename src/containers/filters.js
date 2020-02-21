@@ -46,7 +46,7 @@ class Filters extends Component {
             ],
             //hold all the tags we are interested in providing
             tags: [
-                'nautral', 'vegan', 'organic'
+                'natural', 'vegan'
             ],
             //holds all the products the user is interested in seeing
             productTypeClicked: []
