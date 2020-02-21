@@ -34,7 +34,7 @@ export default class App extends Component {
           />
           <br></br>
           <InstagramEmbed
-              url='https://www.instagram.com/p/B8ZfKWHpL5n/?utm_source=ig_web_copy_link'
+              url='https://www.instagram.com/p/B3Z3FJmJLxb/?utm_source=ig_web_copy_link'
               maxWidth={320}
               hideCaption={true}
               containerTagName='div'
@@ -47,7 +47,20 @@ export default class App extends Component {
             />
             <br></br>
             <InstagramEmbed
-                url='https://www.instagram.com/p/B8ZfKWHpL5n/?utm_source=ig_web_copy_link'
+                url='https://www.instagram.com/p/Betnf9ABy_T/?utm_source=ig_web_copy_link'
+                maxWidth={320}
+                hideCaption={true}
+                containerTagName='div'
+                protocol=''
+                injectScript
+                onLoading={() => {}}
+                onSuccess={() => {}}
+                onAfterRender={() => {}}
+                onFailure={() => {}}
+              />
+            <br></br>
+            <InstagramEmbed
+                url='https://www.instagram.com/p/BzBv8IhAN2d/?utm_source=ig_web_copy_link'
                 maxWidth={320}
                 hideCaption={true}
                 containerTagName='div'
