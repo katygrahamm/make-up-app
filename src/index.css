@@ -2,7 +2,7 @@
   padding-top: 200px;
   height: 50%;
   position: fixed;
-  display: flex;
+  display: absolute;
   border-style: solid;
   border-width: 5px;
   width: 160px;
@@ -11,6 +11,7 @@
   padding-top: 20px;
   padding-bottom: 380px;
   border-color: #FF69B4;
+  text-shadow:2px 2px 4px #383737;
 }
 
 #header {
@@ -21,6 +22,7 @@
   z-index: 1;
   color: #FF69B4;
   font-weight: 800;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 
