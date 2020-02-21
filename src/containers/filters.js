@@ -46,7 +46,7 @@ class Filters extends Component {
             ],
             //hold all the tags we are interested in providing
             tags: [
-                'gluten+free', 'natural'
+                'nautral', 'vegan', 'organic'
             ],
             //holds all the products the user is interested in seeing
             productTypeClicked: []
@@ -108,7 +108,7 @@ class Filters extends Component {
     //renders list of checkboxes and labels
     render() {
         return (
-            <div class="row ">
+            <div class="row" id="sidebar-border">
                 <div id="side-bar" class="col-2">
                     <form class="m-3" onChange={this.onFormSubmit}>
                         {this.state.productTypes.map(this.renderACheckbox)}
