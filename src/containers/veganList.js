@@ -6,10 +6,8 @@ class VeganMakeUpList extends Component {
 
  renderVeganMakeUp (makeUpData) {
    let newMakeUpData = Object.values(makeUpData);
-   console.log(makeUpData)
-
+   // Filter the data to check for products that are vegan and not natural
    let vegan = makeUpData.filter(m => m.tag_list.includes("Vegan")&& !m.tag_list.includes("Natural"))
- console.log("vegan", vegan)
      return (
 
                 vegan.map(m => (

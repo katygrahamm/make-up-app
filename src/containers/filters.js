@@ -34,9 +34,6 @@ class Filters extends Component {
 
                     product_type: "bronzer"
                 }, {
-                    name: 'Eyebrow',
-                    product_type: "eyebrow"
-                }, {
                     name: 'Lip Liner',
                     product_type: "lip_liner"
                 }, {
