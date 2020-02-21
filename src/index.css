@@ -23,7 +23,7 @@
 }
 
 #main-view {
-  padding-top: 20px;
+  padding-top: 10px;
   height: 50%;
   /* position: -webkit-sticky;
   position: sticky; */
@@ -59,4 +59,9 @@ h1 {
 
 h3 {
   padding-bottom: 20px;
+}
+
+#influencer-view {
+  margin-right: 20px;
+  padding-top: 100px;
 }
