@@ -26,6 +26,7 @@ class MakeUpList extends Component {
 render() {
     return (
       <div className="container">
+        <h1 id="header" className="d-flex justify-content-center">Will this kill me?</h1>
         <div className="row d-flex ">
 
 
